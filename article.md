@@ -7,11 +7,11 @@ editor_options:
   chunk_output_type: inline
 ---
 
-# ITERATOR AND GENERATOR IN PYTHON
+# **ITERATOR AND GENERATOR IN PYTHON**
 
 Python is a clean and powerful programming language. You can use it to create websites, analyze data, write utilities, and create many other types of software. In this article, we are not going to talk about python as such but rather introduce you to the powerful tools that the programming language offers us, namely iterators and generators.
 
-# What are the Iterators and generators in python?
+# **What are the Iterators and generators in python?**
 
 Iterators are primarily used to iterate through other objects or convert them to iterators using the iter() method. Generators are commonly used in loops to create an iterator by returning all the data without impacting the loop's iteration. Iterator makes use of the iter() and next() methods. The generator uses the yield keyword.
 
@@ -139,11 +139,12 @@ We have three categories in the itertools module :
 - infinite iterators : loops that continue indefinitely,
 - Iterators ending on the shortest input sequence : to do preprocessing, 
 - combinatorial iterator : facilitates calculations with combinations
+
 ### Example of some methods of the itertools module : 
  1. the group function: 
 
  The group() function can be found in the Recipes section of the itertools documentation. The recipes are a great source of inspiration for using itertools to your advantage.
-### example :
+#### example :
 ```python
 {python}
 import itertools as it
@@ -214,11 +215,11 @@ The output is :
 
 # ***Generator***
 
-### What is a generator ?
+## What is a generator ?
 
 Creating iterators can sometimes be quite complicated to do. The usefulness of generators is therefore to allow us to create iterators more easily. A generator can be seen as a function that behaves similarly to iterators. It generates the elements you loop over : it's an on-demand iterable.
 
-### How to get a generator ?
+## How to get a generator ?
 
 Any function that uses `yield` instead of `return` is a generator function or just a generator.
 
@@ -252,11 +253,11 @@ if __name__ == "__main__" :
     #génère une erreur StopIteration car l'itérateur est déjà positionné sur le dernier élément donc il n'y a rien après
 ```
 
-# **What is the purpose of the yield statement?**
+## What is the purpose of the yield statement?
 
 A `yield` statement is similar to a `return` statement in its simplest form, except that instead of halting execution of the function and returning, yield instead delivers a value to the code looping over the generator and stops execution of the generator function.
 
-## **Generator expression**
+## Generator expression
 
 A generator expression is an expression that returns a generator object.
 
@@ -296,7 +297,7 @@ A generator expression is like a list comprehension in terms of syntax. For exam
 
 However, a generator expression uses the parentheses () instead of square brackets []
 
-**Generator expressions vs list comprehensions**
+***Generator expressions vs list comprehensions***
 
 The following shows how to use the list comprehension to generate square numbers from 0 to 4:
 ```python
@@ -333,7 +334,7 @@ A list comprehension returns an iterable. It means that you can iterate over the
 However, a generator expression returns an iterator, specifically a lazy iterator. It becomes exhausted when you complete iterating over it.
 
 
-## **Generator made with a class**
+## Generator made with a class
 
 There's a lot of work involved in building an iterator in Python. We need to implement a class with `__iter__()` and a `__next__()` method, keep track of internal states, and rerun StopIteration when there are no values to return.
 
@@ -358,7 +359,7 @@ def PowTwoGen(max=0):
 Since the generators automatically keep track of the details, the implementation was concise and much cleaner.
 
 
-# Difference between Iterators and generators
+# **Difference between Iterators and generators**
 
 
 | ITERATOR      | GENERATOR | 
@@ -371,16 +372,16 @@ Since the generators automatically keep track of the details, the implementation
 | Iterators in python are less memory efficient  | Generators in Python are more memory efficient        | 
 | Iterators are used mostly to iterate or convert other objects to an iterator using iter() function.  | Generators are mostly used in loops to generate an iterator by returning all the values in the loop without affecting the iteration of the loop        |
 
-## Example of use of iterators and generators in the data science domain
+# **Example of use of iterators and generators in the data science domain**
 
 People working in machine learning and AI rely heavily on iterators and generators in Python. They are a basic concept of the language and are used a lot in machine learning packages such as scikit-learn or Keras. Understanding how they work and why Pythonistas use them gives you two advantages :
 - You can use them more efficiently and effectively.
 - You can understand the issues related to them faster. This understanding will save you a lot of time both writing code and debugging it.
 
-## Example
+## Examples
 Here we will try to illustrate its use through two example implementations of scikit-learn
 
-**1. Example 1: KFold**
+### 1. Example 1: KFold
 
 One of the main challenges in machine learning is to avoid overfitting. Many algorithms have hyper-parameters or modifications to solve this problem, but the most important concept is cross-validation.
 
@@ -406,7 +407,7 @@ There is a `yield` statement near the end of the class definition, indicating a 
 
 The first time the generator is called, it starts with index 0 ( current=0) and adds the ply size to get the last index of that ply. He then gives these clues. Next time it looks up its local variables and sets current to the last iteration's stop value before executing another round of the for loop.
 
-**2. Example 2: GradientBoostingClassifier**
+### 2. Example 2: GradientBoostingClassifier
 
 The basic idea behind gradient boosting is to combine enough weak learners to get a strong model. Unlike bagging approaches that train many learners in parallel, such as random forest, boosting works iteratively. He trains a weak learner, assesses his main weaknesses and tries to compensate for them in the next round.
 
@@ -420,7 +421,8 @@ def staged_predict_proba(...):
 ```
 
 A gradient boosting step is a step in the iterative process. This generator monitors the error on the test set at each step. The reason for using a generator here is that you don't have to define how many steps there are in a particular instance of this model.
-# CONCLUSION
+
+# **CONCLUSION**
 
 As we have just seen, the operation of iterators and generators is elementary and not at all complex.
 
